@@ -58,7 +58,6 @@ contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
     console.log({
     	numPageVisits: <%= hitsCount %>,
     	previousRequest: <%= (new Gson()).toJson(request.getParameterMap()) %>,
-    	envVar: <%= (new Gson()).toJson(System.getenv()) %>,
     	HOSTNAME: "<%= System.getenv().get("HOSTNAME") %>"
     });
   </script>
