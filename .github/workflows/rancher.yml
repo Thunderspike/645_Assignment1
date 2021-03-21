@@ -6,6 +6,17 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: thunderspike/645_ejbhtmlsurvey:latest
     - name: Github Action for curl
       uses: wei/curl@v1.1.1
       with:
@@ -16,3 +27,4 @@ jobs:
           -H 'Accept: application/json'
           -H 'Content-Type: application/json'
           https://3.238.116.57/v3/project/c-4dkwn:p-d59k7/workloads/deployment:swe645:swe634?action=redeploy
+          
