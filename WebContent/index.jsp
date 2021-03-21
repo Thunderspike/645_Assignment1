@@ -73,10 +73,6 @@
                                 <!-- action="index.jsp" -->
                                 <form method="post" onsubmit="return onSubmitFunc(event)">
                                     <div class="w3-container w3-padding">
-                                        <h4 class="w3-show-inline-block">Please enter the following info below</h4>
-                                        <p class="w3-show-inline-block w3-right">node: <%=
-                                                System.getenv().get("HOSTNAME") %>
-                                        </p>
                                         <input name="fname" type="text" required placeholder="First Name"
                                             class="w3-input w3-border" />
 
