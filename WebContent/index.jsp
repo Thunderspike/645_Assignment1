@@ -68,7 +68,7 @@
                             <div class="w3-container w3-white">
                                 <div class="w3-container w3-padding w3-black">
                                     <h4 class="w3-show-inline-block">Please enter the following info below</h4>
-                					<p class="w3-show-inline-block w3-right">node: <%= System.getenv().get("HOSTNAME") %></p>
+                					<p class="w3-show-inline-block w3-right">pod: <%= System.getenv().get("HOSTNAME") %></p>
                                 </div>
                                 <!-- action="index.jsp" -->
                                 <form method="post" onsubmit="return onSubmitFunc(event)">
