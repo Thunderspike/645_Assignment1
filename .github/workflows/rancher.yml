@@ -9,4 +9,4 @@ jobs:
     - name: Github Action for curl
       uses: wei/curl@v1.1.1
       with:
-        args: '-k -u "${BEARER}" -X POST -H "Accept: application/json" -H "Content-Type: application/json" "https://3.238.116.57/v3/project/c-4dkwn:p-d59k7/workloads/deployment:swe645:swe634?action=redeploy"'
+        args: '-k -u "${{ secrets.BEARER }}" -X POST -H "Accept: application/json" -H "Content-Type: application/json" "https://3.238.116.57/v3/project/c-4dkwn:p-d59k7/workloads/deployment:swe645:swe634?action=redeploy"'
