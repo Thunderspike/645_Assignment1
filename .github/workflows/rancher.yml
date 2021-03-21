@@ -1,7 +1,7 @@
-- name: Github Action for curl
-  uses: wei/curl@v1.1.1
+name: 'Rancher Deploy'
 
 on: push
+
 jobs:
   curl:
     runs-on: ubuntu-latest
