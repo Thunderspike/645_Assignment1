@@ -53,11 +53,15 @@ contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
   <% Integer hitsCount = (Integer) application.getAttribute("hitCounter");
   hitsCount = (hitsCount == null || hitsCount == 0 ) ? 1 : ++hitsCount;
-  application.setAttribute("hitCounter", hitsCount); %>
+  application.setAttribute("hitCounter", hitsCount);%>
+  
+  
   <script>
     console.log({
     	numPageVisits: <%= hitsCount %>,
-    	previousRequest: <%= (new Gson()).toJson(request.getParameterMap()) %>
+    	previousRequest: <%= (new Gson()).toJson(request.getParameterMap()) %>,
+    	envVar: <%= (new Gson()).toJson(System.getenv()) %>,
+    	HOSTNAME: "<%= System.getenv().get("HOSTNAME") %>"
     });
   </script>
 
