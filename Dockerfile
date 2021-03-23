@@ -1,5 +1,5 @@
 FROM tomcat:9.0-jdk15
-LABEL "maintainers"="Pol Ajazi; Amurrio Moya"
+LABEL "maintainers"="Pol Ajazi; Flavio Amurrio Moya"
 
 COPY WebContent /root/WebContent/
 
