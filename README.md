@@ -1,3 +1,5 @@
+# Group: Pol Ajazi, Flavio Amurrio Moya
+
 # Directions:
 
 ## Part 1 - creating an Ubuntu AMI
