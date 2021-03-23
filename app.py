@@ -12,6 +12,10 @@ CATTLE_URL = os.getenv('CATTLE_URL')
 def hello():
     return 'Hello, World!'
 
+@app.route('/cattleurl')
+def cattleurl():
+    return CATTLE_URL
+
 
 @app.route('/redeploy')
 def redeploy():
