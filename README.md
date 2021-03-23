@@ -110,8 +110,6 @@
     -   wait for the cluster to finish updating, and finally, access the current setup at:
         http://54.191.87.71:32767/645_EJBHtmlSurvey/
 
-        awdawd
-
 ## Part 3 - addional pipelining
 
 1. From the top right part of any Rancher screen, hover over the generated user avatar. From there click API & Keys
