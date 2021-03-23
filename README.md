@@ -1,4 +1,4 @@
-# Group: Pol Ajazi, Flavio Amurrio Moya
+## Group: Pol Ajazi, Flavio Amurrio Moya
 
 # Directions:
 
