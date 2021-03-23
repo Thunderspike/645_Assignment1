@@ -171,18 +171,18 @@ Note the {CATTLE_ACCESS_KEY} and {CATTLE_SECRET_KEY} are the interloped API Keys
 
             1. It rebuilds the container image `thunderspike/645_ejbhtmlsurvey:latest` everytime there's a push to the `645_Assignment1` repo using the `Dockerfile` in the root path
 
-            /_Dockerfile_
+/_Dockerfile_
 
-            ```
-                FROM tomcat:9.0-jdk15
-                LABEL "maintainers"="Pol Ajazi; Amurrio Moya"
+```
+    FROM tomcat:9.0-jdk15
+    LABEL "maintainers"="Pol Ajazi; Amurrio Moya"
 
-                COPY WebContent /root/WebContent/
+    COPY WebContent /root/WebContent/
 
-                RUN cd /root/WebContent && \
-                jar -cvf 645_EJBHtmlSurvey.war * && \
-                mv 645_EJBHtmlSurvey.war /usr/local/tomcat/webapps/
-            ```
+    RUN cd /root/WebContent && \
+    jar -cvf 645_EJBHtmlSurvey.war * && \
+    mv 645_EJBHtmlSurvey.war /usr/local/tomcat/webapps/
+```
 
             This Dockerfile copies the /WebContent folder from the Github repo, makes a .war out of it and places it in the /usr/local/tomcat/webapps/ to get served
 
@@ -190,50 +190,50 @@ Note the {CATTLE_ACCESS_KEY} and {CATTLE_SECRET_KEY} are the interloped API Keys
 
                 - The github actions is running the folloinwg yaml file:
 
-                /.github/workflows/_rancher.yml_
+/.github/workflows/_rancher.yml_
 
-                ```
-                    name: Rancher Deploy
+```
+    name: Rancher Deploy
 
-                    on: push
+    on: push
 
-                    jobs:
-                    curl:
-                        runs-on: ubuntu-latest
-                        steps:
-                        - name: Checkout
-                            uses: actions/checkout@v2
+    jobs:
+    curl:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout
+            uses: actions/checkout@v2
 
-                        - name: Set up QEMU
-                            uses: docker/setup-qemu-action@v1
+        - name: Set up QEMU
+            uses: docker/setup-qemu-action@v1
 
-                        - name: Set up Docker Buildx
-                            uses: docker/setup-buildx-action@v1
+        - name: Set up Docker Buildx
+            uses: docker/setup-buildx-action@v1
 
-                        - name: Login to DockerHub
-                            uses: docker/login-action@v1
-                            with:
-                            username: ${{ secrets.DOCKERHUB_USERNAME }}
-                            password: ${{ secrets.DOCKERHUB_TOKEN }}
+        - name: Login to DockerHub
+            uses: docker/login-action@v1
+            with:
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-                        - name: Build and push
-                            uses: docker/build-push-action@v2
-                            with:
-                            context: .
-                            push: true
-                            tags: thunderspike/645_ejbhtmlsurvey:latest
+        - name: Build and push
+            uses: docker/build-push-action@v2
+            with:
+            context: .
+            push: true
+            tags: thunderspike/645_ejbhtmlsurvey:latest
 
-                        - name: Github Action for curl
-                            uses: wei/curl@v1.1.1
-                            with:
-                            args: >
-                                -k
-                                -u "${{ secrets.RANCHER_TOKEN }}"
-                                -X POST
-                                -H 'Accept: application/json'
-                                -H 'Content-Type: application/json'
-                                https://3.236.9.219/v3/project/c-2bkhh:p-jvpx2/workloads/deployment:hw2cluster:hw2cluster?action=redeploy
-                ```
+        - name: Github Action for curl
+            uses: wei/curl@v1.1.1
+            with:
+            args: >
+                -k
+                -u "${{ secrets.RANCHER_TOKEN }}"
+                -X POST
+                -H 'Accept: application/json'
+                -H 'Content-Type: application/json'
+                https://3.236.9.219/v3/project/c-2bkhh:p-jvpx2/workloads/deployment:hw2cluster:hw2cluster?action=redeploy
+```
 
 The result is what was explained in the previous steps. The pseduo code reads as follows:
 
