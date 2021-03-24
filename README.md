@@ -1,5 +1,7 @@
 ## Group: Pol Ajazi, Flavio Amurrio Moya
 
+http://54.191.87.71:32767/645_EJBHtmlSurvey/
+
 # Directions:
 
 ## Part 1 - creating an Ubuntu AMI
