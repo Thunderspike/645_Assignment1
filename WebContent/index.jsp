@@ -3,6 +3,8 @@
         <!DOCTYPE html>
         <html>
 
+        
+
         <head>
             <title>SWE 645 - Pol Ajazi</title>
             <meta charset="UTF-8" />
@@ -73,7 +75,7 @@
                                 <!-- action="index.jsp" -->
                                 <form method="post" onsubmit="return onSubmitFunc(event)">
                                     <div class="w3-container w3-padding">
-                                        <input name="fname" type="text" required placeholder="First Name"
+                                        <input name="fname" type="text" required placeholder="Pol Ajazi"
                                             class="w3-input w3-border" />
 
                                         <p>Last name:</p>
