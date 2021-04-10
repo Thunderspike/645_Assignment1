@@ -56,7 +56,8 @@
                 console.log({
                     numPageVisits: <%= hitsCount %>,
                     previousRequest: <%=(new Gson()).toJson(request.getParameterMap()) %>,
-                    HOSTNAME: "<%= System.getenv().get("HOSTNAME") %>"
+                    HOSTNAME: "<%= System.getenv().get("HOSTNAME") %>",
+                    changes: "changes"
     });
             </script>
 
