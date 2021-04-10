@@ -237,7 +237,7 @@ Note the {CATTLE_ACCESS_KEY} and {CATTLE_SECRET_KEY} are the interloped API Keys
                 https://3.236.9.219/v3/project/c-2bkhh:p-jvpx2/workloads/deployment:hw2cluster:hw2cluster?action=redeploy
 ```
 
-The result is what was explained in the previous steps. The pseduo code reads as follows:
+The result is what was explained in the previous steps. The pseduo code reads as follows: 
 
 -   on Checkout of the repo
 -   build docker image
