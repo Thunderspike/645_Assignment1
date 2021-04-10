@@ -37,4 +37,4 @@ jobs:
             -X POST
             -H 'Accept: application/json'
             -H 'Content-Type: application/json'
-            https://3.236.9.219/v3/project/c-2bkhh:p-jvpx2/workloads/deployment:hw2cluster:hw2cluster?action=redeploy
+            https://18.206.74.120/v3/project/c-b5czr:p-2pvkw/workloads/deployment:assigmment2:assignment-2-workload?action=redeploy
